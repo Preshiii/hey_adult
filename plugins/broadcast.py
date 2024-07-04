@@ -50,8 +50,12 @@ async def broadcast(bot, message):
         logging.error(f"Error in broadcast function: {e}")
 
     finally:
+        time_taken = datetime.timedelta(seconds=int(time.time() - start_time))
         await sts.delete()
-
+        await bot.send_message(
+            message.chat.id,
+            f"Broadcast Completed:\nTime Taken: {time_taken} Sec\n\nTotal Users: {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}"
+        )
 
 @Client.on_message(filters.command("group_broadcast") & filters.user(ADMINS) & filters.reply)
 async def broadcast_group(bot, message):
