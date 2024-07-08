@@ -1,12 +1,18 @@
-FROM python:3.10.9-slim-buster
+FROM python:3.10.9-slim
 
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+# Update and install dependencies
+RUN apt update && apt upgrade -y && \
+    apt install git -y
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /hey_adult
-WORKDIR /hey_adult
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+# Set work directory
+WORKDIR /app
+
+# Copy and install requirements
+COPY requirements.txt requirements.txt
+RUN pip install -U pip && pip install -U -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Set the entrypoint
+CMD ["python", "bot.py"]
