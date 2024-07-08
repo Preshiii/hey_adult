@@ -72,9 +72,12 @@ async def start(client, message):
             logger.error("MAKE SURE BOT IS ADMIN IN FORCESUB CHANNEL")
             return
         btn = [
-            [
+            [       
                 InlineKeyboardButton(
-                    "🍿 JԾIN ԾUR UᎮDΛTΞ CHΛNNΞLS 🍿", url=invite_link.invite_link
+                    "JԾIN 1", url=CHNL_LNK
+                ),
+                InlineKeyboardButton(
+                    "JԾIN 2", url=invite_link.invite_link
                 )
             ]
         ]
@@ -88,7 +91,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Yᴏᴜ ᴀʀᴇ ɴᴏᴛ Oɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ\nt.me/Adultship\n\nJᴏɪɴ ᴛʜᴇ Cʜᴀɴɴᴇʟ, ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ '↻ Tʀʏ Aɢᴀɪɴ' ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ...\n\nTʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇs...**",
+            text="**You need to join my Channel in order to get the series files\n\nKindly Please join the 2 Channels below, & click the try again**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
