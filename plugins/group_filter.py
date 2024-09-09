@@ -85,7 +85,7 @@ async def next_page(bot, query):
     ]
     
     if settings.get('auto_delete', True):
-        btn.insert(0, [InlineKeyboardButton(text="🔞 CLICK HERE FOR OUR ADULT CHANNEL", url='https://t.me/Adultship_films')])
+        btn.insert(0, [InlineKeyboardButton(text="🔞 CLICK HERE FOR OUR ADULT CHANNEL", url='https://t.me/Adultship_film')])
     
     max_btn = settings.get('max_btn', True)
     max_b_tn_value = int(MAX_B_TN) if max_btn else 10
@@ -172,10 +172,10 @@ async def auto_filter(client, msg, spoll=False):
         ]
 
     try:
-        btn.insert(0, [InlineKeyboardButton(text="🔞 CLICK HERE FOR OUR ADULT CHANNEL", url='https://t.me/Adultship_films')])
+        btn.insert(0, [InlineKeyboardButton(text="🔞 CLICK HERE FOR OUR ADULT CHANNEL", url='https://t.me/Adultship_film')])
     except KeyError:
         await save_group_settings(message.chat.id, 'auto_delete', True)
-        btn.insert(0, [InlineKeyboardButton(text="🔞 CLICK HERE FOR OUR ADULT CHANNEL", url='https://t.me/Adultship_films')])
+        btn.insert(0, [InlineKeyboardButton(text="🔞 CLICK HERE FOR OUR ADULT CHANNEL", url='https://t.me/Adultship_film')])
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
