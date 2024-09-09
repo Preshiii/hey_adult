@@ -157,7 +157,7 @@ Nᴀᴍᴇ - {}"""
     CAPTION = """
 <code>{file_name}</code>
 
-➠ 𝗝𝗼𝗶𝗻 : <b>@Adultship</b>"""
+➠ 𝗝𝗼𝗶𝗻 : <b>@adultshipfilmss</b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {query}
